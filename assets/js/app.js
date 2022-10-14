@@ -1,9 +1,9 @@
 
 // Variables
 
-const cuartos = document.querySelector('#cuartos').value;
-const desde = document.querySelector('#desde').value;
-const hasta = document.querySelector('#hasta').value;
+const cuartos = document.querySelector('#cuartos');
+const desde = document.querySelector('#desde');
+const hasta = document.querySelector('#hasta');
 
 let total = document.querySelector('#total');
 
@@ -35,14 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 buscar.addEventListener('click', () => {
 
-    mensajeError();
+    
 
-    datosBusqueda.rooms = cuartos;
-    datosBusqueda.min = desde;
-    datosBusqueda.max = hasta;
+    datosBusqueda.rooms = cuartos.value;
+    datosBusqueda.min = desde.value;
+    datosBusqueda.max = hasta.value;
 
     filtrarPropiedades();
-
+    mensajeError();
     
 } );
 
@@ -131,7 +131,7 @@ function filtarMetros(propiedad) {
 
 function mensajeError() {
     vacio = "";
-    if (cuartos == vacio  || desde == vacio  || hasta == vacio) {
+    if (cuartos.value == vacio  || desde.value == vacio  || hasta.value == vacio) {
         alert(' Favor rellenar todos los campos ')
     }
 }
